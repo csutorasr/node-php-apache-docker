@@ -1,7 +1,7 @@
 FROM php:7.1-cli
 
 # Install OS tools
-RUN apt-get update && apt-get install --yes curl git
+RUN apt-get update && apt-get install --yes curl git unzip
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
@@ -9,9 +9,6 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/bin/composer \
     && chmod +x /usr/bin/composer
-
-# Install zip for composer
-RUN apt-get install -y zip unzip php7.1-zip
 
 # Install Node
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
