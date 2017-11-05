@@ -10,6 +10,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && mv composer.phar /usr/bin/composer \
     && chmod +x /usr/bin/composer
 
+# Install zip for composer
+RUN apt-get install -y zip unzip php7.1-zip
+
 # Install Node
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get install -y nodejs
