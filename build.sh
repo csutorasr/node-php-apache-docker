@@ -1,0 +1,1 @@
+docker build -t csutorasr/node-php:latest .
