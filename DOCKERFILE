@@ -1,7 +1,7 @@
 FROM php:7.1-cli
 
 # Install OS tools
-RUN apt-get update && apt-get install --yes curl git unzip
+RUN apt-get update && apt-get install --yes curl git unzip libfontconfig
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
